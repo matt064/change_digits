@@ -11,8 +11,6 @@ def convert_digit(v):
         "M": 1000,
     }
 
-    numbers = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
-    roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
 
     if type(v) == str:
         N = len(v)
@@ -20,7 +18,10 @@ def convert_digit(v):
         wynik = 0
 
         while i >= 0:
-            wynik += liczby[v[i]]
+            if i < N-1 and liczby[v[i]] < liczby[v[i+1]]:
+                wynik -= liczby[v[i]]
+            else:
+                wynik += liczby[v[i]]
             i -= 1
         return wynik
 
