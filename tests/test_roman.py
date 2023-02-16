@@ -28,3 +28,13 @@ def test_final_number_is_integer():
 def test_lowercase_roman_to_integer():
     wynik = convert_digit('cvii')
     assert wynik == 107
+
+
+def test_one_letter_in_roman_is_wrong():
+    with pytest.raises(ValueError):
+        convert_digit("VIIr")
+
+
+def test_wrong_string():
+    with pytest.raises(ValueError):
+        convert_digit("RT")

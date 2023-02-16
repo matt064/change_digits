@@ -14,16 +14,21 @@ def convert_digit(v):
 
     if type(v) == str:
         v = v.upper()
-        N = len(v)
-        i = N - 1
-        wynik = 0
+        v = list(v)
+        if all([i in liczby for i in v]):
+            N = len(v)
+            i = N - 1
+            wynik = 0
 
-        while i >= 0:
-            if i < N-1 and liczby[v[i]] < liczby[v[i+1]]:
-                wynik -= liczby[v[i]]
-            else:
-                wynik += liczby[v[i]]
-            i -= 1
-        return wynik
+            while i >= 0:
+                if i < N-1 and liczby[v[i]] < liczby[v[i+1]]:
+                    wynik -= liczby[v[i]]
+                else:
+                    wynik += liczby[v[i]]
+                i -= 1
+            return wynik
+        else:
+            raise ValueError('Illegal symbol')
+
 
 
