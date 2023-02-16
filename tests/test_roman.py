@@ -1,5 +1,5 @@
 from roman.roman import convert_digit
-
+import pytest
 
 def test_import_from_roman():
     try:
@@ -9,6 +9,6 @@ def test_import_from_roman():
         assert False, error
 
 
-def test_variable_is_none():
-    assert convert_digit(" ") is None
-    
+def test_simple_roman_to_integer_number():
+    wynik = convert_digit("LVI")    
+    assert wynik == 56
