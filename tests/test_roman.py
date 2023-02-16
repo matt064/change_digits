@@ -38,3 +38,8 @@ def test_one_letter_in_roman_is_wrong():
 def test_wrong_string():
     with pytest.raises(ValueError):
         convert_digit("RT")
+
+
+def test_integer_to_roman_number():
+    wynik = convert_digit(1249)
+    assert wynik == 'MCCXLIX'

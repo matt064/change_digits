@@ -11,6 +11,9 @@ def convert_digit(v):
         "M": 1000,
     }
 
+    numbers = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
+    roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+
 
     if type(v) == str:
         v = v.upper()
@@ -29,6 +32,20 @@ def convert_digit(v):
             return wynik
         else:
             raise ValueError('Illegal symbol')
+    
+    #zmienna int        
+    if type(v) == int:
+        N = len(numbers)
+        i = N - 1
+        wynik = ""
+        while v != 0:
+            if numbers[i] <= v:
+                wynik += roman[i]
+                v -= numbers[i]
+            else:
+                i -= 1
+        
+        return wynik
 
 
 
