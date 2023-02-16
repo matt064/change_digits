@@ -13,6 +13,7 @@ def convert_digit(v):
 
 
     if type(v) == str:
+        v = v.upper()
         N = len(v)
         i = N - 1
         wynik = 0

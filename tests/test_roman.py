@@ -23,3 +23,8 @@ def test_complex_roman_to_integer_number():
 def test_final_number_is_integer():
     wynik = convert_digit("VII")
     assert type(wynik) == int
+
+
+def test_lowercase_roman_to_integer():
+    wynik = convert_digit('cvii')
+    assert wynik == 107
